@@ -9,7 +9,7 @@ const Projects = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:1337/api/proyectos?populate=*")
+    fetch("https://sm-development-bd.onrender.com/api/proyectos?populate=*")
       .then((response) => response.json())
       .then((data) => {
         // Transforma y almacena los datos en el estado
