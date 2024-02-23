@@ -7,6 +7,7 @@ import Image from "next/image";
 import { FiX } from "react-icons/fi";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import logo from "../../public/img/logo.png";
+import { useEffect } from "react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,6 +15,10 @@ const Header = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [usePathname()]);
 
   return (
     <header className="fixed top-0 z-50 w-full h-20 flex items-center justify-between p-3 bg-black bg-opacity-60 backdrop-filter backdrop-blur-lg">
