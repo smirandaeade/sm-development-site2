@@ -1,18 +1,28 @@
+// pages/projects.js o el nombre que corresponda a tu ruta de página
 "use client";
+import React, { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
 
+// Función para obtener datos de la API
+async function getData() {
+  const res = await fetch(
+    "https://sm-development-db.onrender.com/api/proyectos?populate=*"
+  );
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+// Componente Projects
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  console.log(loading);
-
   useEffect(() => {
-    fetch("https://sm-development-bd.onrender.com/api/proyectos?populate=*")
-      .then((response) => response.json())
+    getData()
       .then((data) => {
         // Transforma y almacena los datos en el estado
         const transformedProjects = data.data.map((project) => ({
@@ -22,14 +32,20 @@ const Projects = () => {
           images: project.attributes.projectimages.data.map(
             (img) => img.attributes.formats.large.url
           ),
-          link: `${project.attributes.url}`,
+          link: project.attributes.url,
         }));
-        setLoading(false);
         setProjects(transformedProjects);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
+  // JSX del componente
   return (
     <main className="pt-20 pb-20 flex flex-col items-center justify-center min-h-screen p-4">
       <div className="mt-20 w-full bg-white p-6 rounded-lg shadow">

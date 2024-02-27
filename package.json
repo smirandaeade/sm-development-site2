@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@strapi/provider-upload-aws-s3": "^4.20.2",
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.7.2",
     "next": "14.1.0",

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
+
 export default function Home() {
   const [language, setLanguage] = useState("es"); // 'es' es el valor predeterminado
 
@@ -108,4 +109,7 @@ export default function Home() {
       </div>
     </>
   );
+
+  
 }
+
