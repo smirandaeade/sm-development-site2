@@ -8,7 +8,7 @@ import Image from "next/image";
 // Función para obtener datos de la API
 async function getData() {
   const res = await fetch(
-    "https://sm-development-db.onrender.com/api/proyectos?populate=*"
+    "https://sm-development-db-production.up.railway.app/api/proyectos?populate=*"
   );
   if (!res.ok) {
     throw new Error("Failed to fetch data");
