@@ -67,21 +67,21 @@ const Header = () => {
 
         <div className="md:hidden flex justify-center space-x-4 p-4">
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/sebastian-miranda-eade-a619831ba/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaLinkedin className="text-black text-3xl" />
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/smirandaeade"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaGithub className="text-black text-3xl" />
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/sebascript.me/"
             target="_blank"
             rel="noopener noreferrer"
           >

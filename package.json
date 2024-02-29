@@ -13,6 +13,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@strapi/provider-upload-aws-s3": "^4.20.2",
+    "emailjs-com": "^3.2.0",
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.7.2",
     "next": "14.1.0",
@@ -22,7 +23,8 @@
     "react-icons": "^5.0.1",
     "react-responsive-carousel": "^3.2.23",
     "react-slick": "^0.30.2",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.10.5"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",

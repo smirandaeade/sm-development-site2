@@ -1,10 +1,32 @@
 "use client";
 import React from "react";
+import emailjs from "emailjs-com";
+import Swal from 'sweetalert2';
 
 const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica para enviar el formulario
+    emailjs
+      .sendForm("default_service", "template_5vjeayl", e.target, "jZ-g2qOIFPr_8rkPg")
+      .then(
+        (result) => {
+          Swal.fire({
+            title: 'Enviado!',
+            text: 'Tu mensaje ha sido enviado exitosamente.',
+            icon: 'success',
+            confirmButtonText: 'Cerrar'
+          });
+          e.target.reset();
+        },
+        (error) => {
+          Swal.fire({
+            title: 'Error!',
+            text: 'Hubo un problema al enviar tu mensaje.',
+            icon: 'error',
+            confirmButtonText: 'Cerrar'
+          });
+        }
+      );
   };
 
   return (
@@ -19,7 +41,7 @@ const Contact = () => {
               </label>
               <input
                 type="text"
-                id="name" 
+                id="name"
                 name="name"
                 className="w-full border border-gray-300 rounded-md px-3 py-2"
                 required
